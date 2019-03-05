@@ -50,7 +50,7 @@ abstract class Module extends \Magento\Framework\App\Action\Action {
     protected function isAuthorized() {
 
         $token = $this->helper->getConfig()['security_token'];
-        $authToken = (isset($_SERVER['HTTP_X_GLEW_TOKEN']) ? $_SERVER['HTTP_X_GLEW_TOKEN'] : $_SERVER['X_GLEW_TOKEN']);
+        $authToken = (isset($_SERVER['HTTP_X_GLEW_TOKEN']) ? $_SERVER['HTTP_X_GLEW_TOKEN'] : "");
 
         if (empty($authToken)) {
             return false;
